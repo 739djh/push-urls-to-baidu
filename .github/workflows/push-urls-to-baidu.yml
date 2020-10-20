@@ -12,8 +12,8 @@ jobs:
 
       - name: push-urls-to-baidu
         env:
-          sitemap_txt_url: ${{ secrets.sitemap_txt_url }}
+          sitemap_xml_url: ${{ secrets.sitemap_xml_url }}
           baidu_api: ${{ secrets.baidu_api }}
         run: |
-          wget $sitemap_txt_url -qO urls.txt
-          curl -s -H 'Content-Type:text/plain' --data-binary @urls.txt $baidu_api
+          wget $sitemap_xml_url -qO urls.xml
+          curl -s -H 'Content-Type:text/plain' --data-binary @urls.xml $baidu_api
